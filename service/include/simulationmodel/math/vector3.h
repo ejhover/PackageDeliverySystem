@@ -62,12 +62,9 @@ class Vector3 {
   // return std::vector version of this Vector3
   // template function should be defined in same file
   // with template keyword
-  template<class T> std::vector<T> vec() const {
-    return {
-      static_cast<T>(x),
-      static_cast<T>(y),
-      static_cast<T>(z)
-    };
+  template <class T>
+  std::vector<T> vec() const {
+    return {static_cast<T>(x), static_cast<T>(y), static_cast<T>(z)};
   }
   Vector3 cross(const Vector3& v) const;
   double magnitude() const;

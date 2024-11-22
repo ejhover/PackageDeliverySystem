@@ -21,44 +21,57 @@ class Package : public IEntity {
    * @brief Gets the Package's destination
    * @return The Package's destination
    */
-  Vector3 getDestination() const;
+  virtual Vector3 getDestination() const;
 
   /**
    * @brief Returns the name of the strategy for this package
-   * 
+   *
    * @returns String name of strategy
-  */
-  std::string getStrategyName() const;
+   */
+  virtual std::string getStrategyName() const;
+
+  /**
+   * @brief Returns the owner of the package
+   *
+   * @return pointer to Robot owning the package
+   */
+  virtual Robot* getOwner() const;
+
+  /**
+   * @brief Returns whether or not the package needs to be delivered
+   *
+   * @return boolean value of the above statement
+   */
+  virtual bool requiresDelivery() const;
 
   /**
    * @brief Set the Strategy Name
    *
    * @param strategyName_ Strategy name
    */
-  void setStrategyName(std::string strategyName_);
+  virtual void setStrategyName(std::string strategyName_);
 
   /**
    * @brief Updates the Package
-   * 
+   *
    * @param dt difference in time since last update
-  */
-  void update(double dt);
+   */
+  virtual void update(double dt);
 
   /**
    * @brief Sets the attributes for delivery
-   * 
+   *
    * @param owner Robot for the package to be delivered to
-  */
-  void initDelivery(Robot* owner);
+   */
+  virtual void initDelivery(Robot* owner);
 
   /**
    * @brief Gives the robot/owner this package
-  */
-  void handOff();
+   */
+  virtual void handOff();
 
-  bool requiresDelivery = true;
-
- private:
+ protected:
+  bool requiresDelivery_ = true;
   Vector3 destination;
   std::string strategyName;
   Robot* owner = nullptr;

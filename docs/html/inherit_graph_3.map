@@ -1,0 +1,17 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classIPublisher.html" title=" " alt="" coords="5,129,92,155"/>
+<area shape="rect" id="Node000001" href="$classIEntity.html" title="Represents an entity in a physical system." alt="" coords="140,129,204,155"/>
+<area shape="poly" id="edge8_Node000000_Node000001" title=" " alt="" coords="106,139,140,139,140,145,106,145"/>
+<area shape="rect" id="Node000002" href="$classDrone.html" title="Represents a drone in a physical system. Drones move using euler integration based on a specified vel..." alt="" coords="305,5,366,31"/>
+<area shape="poly" id="edge9_Node000001_Node000002" title=" " alt="" coords="185,116,212,77,230,57,251,40,277,27,304,20,305,25,279,32,253,44,233,61,216,80,189,119"/>
+<area shape="rect" id="Node000003" href="$classHelicopter.html" title=" " alt="" coords="291,55,380,80"/>
+<area shape="poly" id="edge10_Node000001_Node000003" title=" " alt="" coords="200,119,251,89,290,75,291,80,253,94,203,124"/>
+<area shape="rect" id="Node000004" href="$classHuman.html" title=" " alt="" coords="301,104,370,129"/>
+<area shape="poly" id="edge11_Node000001_Node000004" title=" " alt="" coords="217,132,300,119,301,125,218,138"/>
+<area shape="rect" id="Node000005" href="$classIEntityDecorator.html" title=" " alt="" coords="252,153,419,179"/>
+<area shape="poly" id="edge12_Node000001_Node000005" title=" " alt="" coords="218,146,252,151,251,156,217,151"/>
+<area shape="rect" id="Node000006" href="$classPackage.html" title=" " alt="" coords="297,203,374,228"/>
+<area shape="poly" id="edge13_Node000001_Node000006" title=" " alt="" coords="204,160,253,188,297,203,296,208,251,192,201,165"/>
+<area shape="rect" id="Node000007" href="$classRobot.html" title="Represents a robot in a physical system." alt="" coords="305,252,365,277"/>
+<area shape="poly" id="edge14_Node000001_Node000007" title=" " alt="" coords="189,165,216,202,254,237,279,250,306,258,304,263,277,255,250,242,212,206,185,168"/>
+</map>

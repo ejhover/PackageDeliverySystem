@@ -1,0 +1,177 @@
+\doxysection{Vector3 Class Reference}
+\hypertarget{classVector3}{}\label{classVector3}\index{Vector3@{Vector3}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classVector3_a0f49191f7e001e7f7ae1cb49522118b4}\label{classVector3_a0f49191f7e001e7f7ae1cb49522118b4} 
+{\bfseries Vector3} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\Hypertarget{classVector3_ad474e798906a3ffcde27c6d26836bf85}\label{classVector3_ad474e798906a3ffcde27c6d26836bf85} 
+{\bfseries Vector3} (double a)
+\item 
+\mbox{\hyperlink{classVector3_a61caf3c2269cee584e55c84a6ec0a475}{Vector3}} (double a, double b, double c)
+\begin{DoxyCompactList}\small\item\em Parameter constructor. \end{DoxyCompactList}\item 
+\Hypertarget{classVector3_af6c12135fcae49fb33975a0c64fe66c8}\label{classVector3_af6c12135fcae49fb33975a0c64fe66c8} 
+{\bfseries Vector3} (const std\+::vector$<$ double $>$ \&v)
+\item 
+\Hypertarget{classVector3_acce18851ff3e3c80a7468ce876ddc6e0}\label{classVector3_acce18851ff3e3c80a7468ce876ddc6e0} 
+{\bfseries Vector3} (const std\+::vector$<$ float $>$ \&v)
+\item 
+\Hypertarget{classVector3_a3037bb6d6c81c7873652e37515412541}\label{classVector3_a3037bb6d6c81c7873652e37515412541} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{classVector3}{Vector3}} \&v) const
+\item 
+\Hypertarget{classVector3_ab060c33ff2f9cce87e868f836e888878}\label{classVector3_ab060c33ff2f9cce87e868f836e888878} 
+double \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (int i)
+\item 
+\Hypertarget{classVector3_a91df3a6b8a53a563b3d5890d56999f3d}\label{classVector3_a91df3a6b8a53a563b3d5890d56999f3d} 
+double {\bfseries operator\mbox{[}$\,$\mbox{]}} (int i) const
+\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classVector3_a79356953b808ee103afc0d445030e778}{operator+}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&v) const
+\begin{DoxyCompactList}\small\item\em Overrides + operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classVector3_abf9f28941176a900c57dad4596ae52b7}{operator-\/}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&v) const
+\begin{DoxyCompactList}\small\item\em Overrides -\/ operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classVector3_a34167b5a0cd66c96241bf448f9c8fb31}{operator\texorpdfstring{$\ast$}{*}}} (double s) const
+\begin{DoxyCompactList}\small\item\em Overrides \texorpdfstring{$\ast$}{*} operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classVector3_a8e4fbee27f6d8c944ce03171993e66d8}{operator/}} (double s) const
+\begin{DoxyCompactList}\small\item\em Overrides / operator. \end{DoxyCompactList}\item 
+\Hypertarget{classVector3_a7575273df262e51b4e7b5b7e088bf8c7}\label{classVector3_a7575273df262e51b4e7b5b7e088bf8c7} 
+double {\bfseries operator\texorpdfstring{$\ast$}{*}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&v) const
+\item 
+\Hypertarget{classVector3_a9bf05a4d19360951bf4636027dd8dfd2}\label{classVector3_a9bf05a4d19360951bf4636027dd8dfd2} 
+{\footnotesize template$<$class T $>$ }\\std\+::vector$<$ T $>$ {\bfseries vec} () const
+\item 
+\Hypertarget{classVector3_af574893f7c2b4e7fa9400a96f5ebfcf1}\label{classVector3_af574893f7c2b4e7fa9400a96f5ebfcf1} 
+\mbox{\hyperlink{classVector3}{Vector3}} {\bfseries cross} (const \mbox{\hyperlink{classVector3}{Vector3}} \&v) const
+\item 
+\Hypertarget{classVector3_a7b900ba64852e9a66877e653945e08f6}\label{classVector3_a7b900ba64852e9a66877e653945e08f6} 
+double {\bfseries magnitude} () const
+\item 
+\Hypertarget{classVector3_ad9a002cc3d414bb07a937318de5b28c8}\label{classVector3_ad9a002cc3d414bb07a937318de5b28c8} 
+\mbox{\hyperlink{classVector3}{Vector3}} \& {\bfseries normalize} ()
+\item 
+\Hypertarget{classVector3_a2bb59970b417af0d6be2f9424f7f3abc}\label{classVector3_a2bb59970b417af0d6be2f9424f7f3abc} 
+\mbox{\hyperlink{classVector3}{Vector3}} {\bfseries unit} () const
+\item 
+\Hypertarget{classVector3_aab0a2ae500f4610508b00b0d1075f583}\label{classVector3_aab0a2ae500f4610508b00b0d1075f583} 
+double {\bfseries dist} (const \mbox{\hyperlink{classVector3}{Vector3}} \&v) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classVector3_a60aa84ebc037dec9faba617f8ddb231d}\label{classVector3_a60aa84ebc037dec9faba617f8ddb231d} 
+double {\bfseries x} = 0
+\item 
+\Hypertarget{classVector3_ae4965693beffdb6069e0618222cae459}\label{classVector3_ae4965693beffdb6069e0618222cae459} 
+double {\bfseries y} = 0
+\item 
+\Hypertarget{classVector3_aa5f4108b2839a110eeaec8606780eaff}\label{classVector3_aa5f4108b2839a110eeaec8606780eaff} 
+double {\bfseries z} = 0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classVector3_ae16a1e6e31766176501eb5b2f64f77cb}\label{classVector3_ae16a1e6e31766176501eb5b2f64f77cb} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&strm, const \mbox{\hyperlink{classVector3}{Vector3}} \&v)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classVector3_a61caf3c2269cee584e55c84a6ec0a475}\label{classVector3_a61caf3c2269cee584e55c84a6ec0a475} 
+\index{Vector3@{Vector3}!Vector3@{Vector3}}
+\index{Vector3@{Vector3}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{Vector3()}{Vector3()}}
+{\footnotesize\ttfamily Vector3\+::\+Vector3 (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c }\end{DoxyParamCaption})}
+
+
+
+Parameter constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & x-\/coordinate \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & y-\/coordinate \\
+\hline
+\mbox{\texttt{ in}}  & {\em c} & z-\/coordinate \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classVector3_a34167b5a0cd66c96241bf448f9c8fb31}\label{classVector3_a34167b5a0cd66c96241bf448f9c8fb31} 
+\index{Vector3@{Vector3}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} Vector3\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{double}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Overrides \texorpdfstring{$\ast$}{*} operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em v} & The \doxylink{classVector3}{Vector3} object you would like to multiply to this \doxylink{classVector3}{Vector3} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{classVector3}{Vector3} Object comprised of the multiplication of the two objects 
+\end{DoxyReturn}
+\Hypertarget{classVector3_a79356953b808ee103afc0d445030e778}\label{classVector3_a79356953b808ee103afc0d445030e778} 
+\index{Vector3@{Vector3}!operator+@{operator+}}
+\index{operator+@{operator+}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} Vector3\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{v }\end{DoxyParamCaption}) const}
+
+
+
+Overrides + operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em v} & The \doxylink{classVector3}{Vector3} object you would like to add to this \doxylink{classVector3}{Vector3} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{classVector3}{Vector3} Object comprised of the sum of the two objects 
+\end{DoxyReturn}
+\Hypertarget{classVector3_abf9f28941176a900c57dad4596ae52b7}\label{classVector3_abf9f28941176a900c57dad4596ae52b7} 
+\index{Vector3@{Vector3}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} Vector3\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{v }\end{DoxyParamCaption}) const}
+
+
+
+Overrides -\/ operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em v} & The \doxylink{classVector3}{Vector3} object you would like to subtract to this \doxylink{classVector3}{Vector3} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{classVector3}{Vector3} Object comprised of the subtraction of the two objects 
+\end{DoxyReturn}
+\Hypertarget{classVector3_a8e4fbee27f6d8c944ce03171993e66d8}\label{classVector3_a8e4fbee27f6d8c944ce03171993e66d8} 
+\index{Vector3@{Vector3}!operator/@{operator/}}
+\index{operator/@{operator/}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} Vector3\+::operator/ (\begin{DoxyParamCaption}\item[{double}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Overrides / operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em v} & The \doxylink{classVector3}{Vector3} object you would like to divide to this \doxylink{classVector3}{Vector3} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{classVector3}{Vector3} Object comprised of the division of the two objects 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/hover114/csci-\/3081w-\/f24/team-\/033-\/finalproject/service/include/simulationmodel/math/vector3.\+h\end{DoxyCompactItemize}

@@ -1,27 +1,35 @@
+#define _USE_MATH_DEFINES
 #include "Human.h"
 
-Human::Human(const JsonObject& obj) : IEntity(obj) {
-  this->destination = {146, 265, -121};
+#include <cmath>
+#include <limits>
+
+#include "AstarStrategy.h"
+#include "SimulationModel.h"
+
+Vector3 Human::kellerPosition(64.0, 254.0, -210.0);
+
+Human::Human(const JsonObject& obj) : IEntity(obj) {}
+
+Human::~Human() {
+  if (movement) delete movement;
 }
 
-Human::~Human() {}
-
 void Human::update(double dt) {
-  Vector3 dest1 = {146, 265, -121};
-  Vector3 dest2 = {-191, 265, -112};
-
-  if ((this->position - this->destination).magnitude() < 1) {
-    // current_destination = !current_destination;
-    if (dest2 == destination) {  // moving towards (146,265,-121)
-      this->destination = dest1;
-    } else {  // moving towards (-191,265,-112)
-      this->destination = dest2;
+  if (movement && !movement->isCompleted()) {
+    movement->move(this, dt);
+    bool nearKeller = this->position.dist(Human::kellerPosition) < 85;
+    if (nearKeller && !this->atKeller) {
+      std::string message = this->getName() + " visited Keller hall";
+      notifyObservers(message);
     }
+    atKeller = nearKeller;
+  } else {
+    if (movement) delete movement;
+    Vector3 dest;
+    dest.x = ((static_cast<double>(rand())) / RAND_MAX) * (2900) - 1400;
+    dest.y = position.y;
+    dest.z = ((static_cast<double>(rand())) / RAND_MAX) * (1600) - 800;
+    if (model) movement = new AstarStrategy(position, dest, model->getGraph());
   }
-
-  Vector3 diff = this->destination - this->position;
-  Vector3 dir = diff.unit();
-  Vector3 move_vec = dir * this->speed * dt;
-  this->direction = dir;
-  this->position = this->position + move_vec;
 }

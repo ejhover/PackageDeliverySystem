@@ -1,0 +1,27 @@
+\doxysection{Human.\+h}
+\hypertarget{Human_8h_source}{}\label{Human_8h_source}\index{/home/hover114/csci-\/3081w-\/f24/team-\/033-\/finalproject/service/include/simulationmodel/entity/Human.h@{/home/hover114/csci-\/3081w-\/f24/team-\/033-\/finalproject/service/include/simulationmodel/entity/Human.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ HUMAN\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ HUMAN\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}IEntity.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}IStrategy.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classHuman}{Human}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classIEntity}{IEntity}}\ \{}
+\DoxyCodeLine{00008\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \mbox{\hyperlink{classHuman_ab9093e7585720f86abc562eeca7b0c18}{Human}}(\textcolor{keyword}{const}\ JsonObject\&\ obj);}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \mbox{\hyperlink{classHuman}{\string~Human}}();}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHuman_a50fc28819a36d3b6cfdb3b219e340231}{update}}(\textcolor{keywordtype}{double}\ dt);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classVector3}{Vector3}}\ kellerPosition;}
+\DoxyCodeLine{00021\ \ \ \mbox{\hyperlink{classIStrategy}{IStrategy}}*\ movement\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00022\ \ \ \textcolor{keywordtype}{bool}\ atKeller\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

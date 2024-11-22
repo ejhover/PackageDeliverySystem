@@ -1,0 +1,73 @@
+\doxysection{Web\+Server\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classWebServer}{}\label{classWebServer}\index{WebServer$<$ T $>$@{WebServer$<$ T $>$}}
+
+
+Inheritance diagram for Web\+Server\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classWebServer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Web\+Server\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classWebServer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classWebServer_a68279ad1b4b5df6ce5285ad463b2af51}\label{classWebServer_a68279ad1b4b5df6ce5285ad463b2af51} 
+{\bfseries Web\+Server} (int port=8081, const std\+::string \&web\+Dir="{}."{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classWebServerBase}{Web\+Server\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Web\+Server\+Base} (int port=8081, const std\+::string \&web\+Dir="{}."{})
+\item 
+void {\bfseries service} (int time=10)
+\item 
+virtual void {\bfseries create\+Session} (void \texorpdfstring{$\ast$}{*}info)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWebServerBase_1_1Session}{Session}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classWebServer_af6a19106893d73f79b007faf9e98441a}{create\+Session}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classWebServerBase}{Web\+Server\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+lws\+\_\+context \texorpdfstring{$\ast$}{*} {\bfseries context} = nullptr
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classWebServerBase_1_1Session}{Session}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries sessions}
+\item 
+std\+::map$<$ int, \mbox{\hyperlink{classWebServerBase_1_1Session}{Session}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries session\+Map}
+\item 
+std\+::string {\bfseries web\+Dir}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classWebServer_af6a19106893d73f79b007faf9e98441a}\label{classWebServer_af6a19106893d73f79b007faf9e98441a} 
+\index{WebServer$<$ T $>$@{WebServer$<$ T $>$}!createSession@{createSession}}
+\index{createSession@{createSession}!WebServer$<$ T $>$@{WebServer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{createSession()}{createSession()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classWebServerBase_1_1Session}{Session}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classWebServer}{Web\+Server}}$<$ T $>$\+::create\+Session (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classWebServerBase}{Web\+Server\+Base}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/hover114/csci-\/3081w-\/f24/team-\/033-\/finalproject/service/include/simulationmodel/Web\+Server.\+h\end{DoxyCompactItemize}

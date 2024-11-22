@@ -1,0 +1,19 @@
+<map id="IEntity" name="IEntity">
+<area shape="rect" id="Node000001" title="Represents an entity in a physical system." alt="" coords="192,271,256,296"/>
+<area shape="rect" id="Node000002" href="$classIPublisher.html" title=" " alt="" coords="47,168,134,193"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,199,210,269,207,273,115,204"/>
+<area shape="rect" id="Node000003" href="$classSimulationModel.html" title="Class SimulationModel handling the transit simulation. it can communicate with the controller." alt="" coords="158,168,290,193"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="227,207,227,271,221,271,221,207"/>
+<area shape="rect" id="Node000004" href="$classIObserver.html" title=" " alt="" coords="5,80,91,105"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="85,109,201,165,199,170,83,114"/>
+<area shape="rect" id="Node000005" href="$classIController.html" title="class for IController used for transit service. Uses the Model View" alt="" coords="115,80,205,105"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="169,118,181,142,207,166,203,170,177,146,164,120"/>
+<area shape="rect" id="Node000006" href="$classrouting_1_1Graph.html" title=" " alt="" coords="229,80,344,105"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="272,118,235,169,231,166,268,115"/>
+<area shape="rect" id="Node000007" href="$classCompositeFactory.html" title="Factory method for composite class. Inherits from IEntityFactory." alt="" coords="369,80,509,105"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="398,113,254,170,252,165,396,108"/>
+<area shape="rect" id="Node000008" href="$classIEntityFactory.html" title="Composite Factory Interface." alt="" coords="383,5,495,31"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="441,45,441,80,436,80,436,45"/>
+<area shape="rect" id="Node000009" href="$classVector3.html" title=" " alt="" coords="315,168,387,193"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="330,204,276,249,243,273,240,268,273,245,326,200"/>
+</map>

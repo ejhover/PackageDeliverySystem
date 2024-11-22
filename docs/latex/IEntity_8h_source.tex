@@ -1,0 +1,64 @@
+\doxysection{IEntity.\+h}
+\hypertarget{IEntity_8h_source}{}\label{IEntity_8h_source}\index{/home/hover114/csci-\/3081w-\/f24/team-\/033-\/finalproject/service/include/simulationmodel/entity/IEntity.h@{/home/hover114/csci-\/3081w-\/f24/team-\/033-\/finalproject/service/include/simulationmodel/entity/IEntity.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ENTITY\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ENTITY\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Graph.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}IPublisher.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}math/vector3.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}util/json.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSimulationModel}{SimulationModel}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classIEntity}{IEntity}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classIPublisher}{IPublisher}}\ \{}
+\DoxyCodeLine{00023\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \mbox{\hyperlink{classIEntity_ad59bd0827b3f6e19b82a4e28e5400fe3}{IEntity}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00032\ \ \ \mbox{\hyperlink{classIEntity_aebbc52d4f3a8a58009f1c93e12396e94}{IEntity}}(\textcolor{keyword}{const}\ JsonObject\&\ details);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00037\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classIEntity_a8aea4fbca51d17a0ce314aaa4633f28e}{\string~IEntity}}();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00045\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIEntity_a92e8e134288718407362c0c3c7f399e3}{linkModel}}(\mbox{\hyperlink{classSimulationModel}{SimulationModel}}*\ model);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00051\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classIEntity_a73cb4fec8ca637f0d3d134e0e1010faf}{getId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00057\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classVector3}{Vector3}}\ \mbox{\hyperlink{classIEntity_a819829dd2d40749222e89cb0760ab31b}{getPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classVector3}{Vector3}}\ \mbox{\hyperlink{classIEntity_a45106163e5555334aa81af0f3ab37fa2}{getDirection}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ JsonObject\&\ \mbox{\hyperlink{classIEntity_a290929ac92b19c03db226fd3900122a6}{getDetails}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00075\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classIEntity_a4d299d2bd31664a8f295be0cd28c2130}{getColor}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00081\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classIEntity_a78d0df9defef615fa1613c27ba91e924}{getName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00087\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classIEntity_abbbdd0243e31d9dbc7dfe8e74c97a0dc}{getSpeed}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00093\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIEntity_a881023cada67a8888c72eba12c95227d}{setPosition}}(\mbox{\hyperlink{classVector3}{Vector3}}\ pos\_);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00099\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIEntity_ac29b4a509e75ed2b5747558b2e7aaa2c}{setDirection}}(\mbox{\hyperlink{classVector3}{Vector3}}\ dir\_);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00105\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIEntity_a939b84f7e2e63226e2bd0c86b648c4f6}{setColor}}(std::string\ col\_);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00111\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIEntity_adaa208a5fa80c1aefdc05919448a4a99}{rotate}}(\textcolor{keywordtype}{double}\ angle);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00117\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIEntity_a9aac6c7fa7d3d721f2ea69b116d39d5b}{update}}(\textcolor{keywordtype}{double}\ dt)\ =\ 0;}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00120\ \ \ \mbox{\hyperlink{classSimulationModel}{SimulationModel}}*\ model\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00121\ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ -\/1;}
+\DoxyCodeLine{00122\ \ \ JsonObject\ details;}
+\DoxyCodeLine{00123\ \ \ \mbox{\hyperlink{classVector3}{Vector3}}\ position;}
+\DoxyCodeLine{00124\ \ \ \mbox{\hyperlink{classVector3}{Vector3}}\ direction;}
+\DoxyCodeLine{00125\ \ \ std::string\ color;}
+\DoxyCodeLine{00126\ \ \ std::string\ name;}
+\DoxyCodeLine{00127\ \ \ \textcolor{keywordtype}{double}\ speed\ =\ 0;}
+\DoxyCodeLine{00128\ \};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

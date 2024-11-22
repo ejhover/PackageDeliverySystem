@@ -1,0 +1,32 @@
+\doxysection{Robot.\+h}
+\hypertarget{Robot_8h_source}{}\label{Robot_8h_source}\index{/home/hover114/csci-\/3081w-\/f24/team-\/033-\/finalproject/service/include/simulationmodel/entity/Robot.h@{/home/hover114/csci-\/3081w-\/f24/team-\/033-\/finalproject/service/include/simulationmodel/entity/Robot.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ROBOT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ROBOT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}IEntity.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}math/vector3.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}util/json.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPackage}{Package}};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRobot}{Robot}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classIEntity}{IEntity}}\ \{}
+\DoxyCodeLine{00020\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \mbox{\hyperlink{classRobot_acda89d5cfb3e9efeb2fd15d2a732b335}{Robot}}(\textcolor{keyword}{const}\ JsonObject\&\ obj);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRobot_a416c5e919cec4343ab892d4b1827399d}{update}}(\textcolor{keywordtype}{double}\ dt);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRobot_a7e4c5a161e4cd80130a6b0283ebf8af1}{receive}}(\mbox{\hyperlink{classPackage}{Package}}*\ p);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{bool}\ requestedDelivery\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{classPackage}{Package}}*\ \textcolor{keyword}{package\ }=\ nullptr;}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ ROBOT\_H}}
+
+\end{DoxyCode}

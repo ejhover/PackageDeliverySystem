@@ -33,7 +33,6 @@ let beamSelector2 = new THREE.Mesh(
   })
 );
 let beamState = 0;
-let selectedStrat = 0;
 
 function initScheduler() {
   beamSelector1.visible = false;
@@ -84,8 +83,7 @@ function initScheduler() {
 
   scheduleSubmit.onclick = () => {
     let name = scheduleName.value;
-    let searchStrat = (scheduleStrategy[selectedStrat] as HTMLOptionElement)
-      .value;
+    let searchStrat = scheduleStrategy.value;
     scheduleError.innerHTML = "";
     if (name == "")
       scheduleError.innerHTML +=
@@ -151,35 +149,41 @@ function initScheduler() {
         if (beamState == 0) {
           scheduleButton.click();
           scheduleName.focus();
+          scheduleName.value = "";
           ev.preventDefault();
         }
         break;
       case "Enter":
-        if (beamState > 0) scheduleSubmit.click();
+        if (beamState > 0) {
+          ev.preventDefault();
+          scheduleSubmit.click();
+        }
         break;
       case "Escape":
-        if (beamState > 0) scheduleCancelButton.click();
+        if (beamState > 0) {
+          ev.preventDefault();
+          scheduleCancelButton.click();
+        }
         break;
       case "ArrowUp":
         if (beamState > 0) {
           ev.preventDefault();
-          selectedStrat =
-            (((selectedStrat + 1) % scheduleStrategy.length) +
-              scheduleStrategy.length) %
-            scheduleStrategy.length;
-          (scheduleStrategy[selectedStrat] as HTMLOptionElement).selected =
-            true;
+          (
+            scheduleStrategy[
+              (scheduleStrategy.selectedIndex + scheduleStrategy.length - 1) %
+                scheduleStrategy.length
+            ] as HTMLOptionElement
+          ).selected = true;
         }
         break;
       case "ArrowDown":
         if (beamState > 0) {
           ev.preventDefault();
-          selectedStrat =
-            (((selectedStrat - 1) % scheduleStrategy.length) +
-              scheduleStrategy.length) %
-            scheduleStrategy.length;
-          (scheduleStrategy[selectedStrat] as HTMLOptionElement).selected =
-            true;
+          (
+            scheduleStrategy[
+              (scheduleStrategy.selectedIndex + 1) % scheduleStrategy.length
+            ] as HTMLOptionElement
+          ).selected = true;
         }
         break;
     }

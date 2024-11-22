@@ -1,0 +1,126 @@
+\doxysection{Web\+Server.\+h}
+\hypertarget{WebServer_8h_source}{}\label{WebServer_8h_source}\index{/home/hover114/csci-\/3081w-\/f24/team-\/033-\/finalproject/service/include/simulationmodel/WebServer.h@{/home/hover114/csci-\/3081w-\/f24/team-\/033-\/finalproject/service/include/simulationmodel/WebServer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ WEBSERVER\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ WEBSERVER\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}libwebsockets.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}libwebsockets/lws-\/service.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classWebServerBase}{WebServerBase}}\ \{}
+\DoxyCodeLine{00016\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \mbox{\hyperlink{classWebServerBase}{WebServerBase}}(\textcolor{keywordtype}{int}\ port\ =\ 8081,\ \textcolor{keyword}{const}\ std::string\&\ webDir\ =\ \textcolor{stringliteral}{"{}."{}});}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classWebServerBase}{\string~WebServerBase}}();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classWebServerBase_1_1Session}{Session}}\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classWebServerBase}{WebServerBase}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classWebServerBase_1_1Session}{Session}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classWebServerBase_1_1Session}{\string~Session}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ getId()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ id;\ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ receiveMessage(\textcolor{keyword}{const}\ std::string\&\ msg)\ \{\}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ sendMessage(\textcolor{keyword}{const}\ std::string\&\ msg);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ update()\ \{\}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ onWrite();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}*\ state;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ id;}
+\DoxyCodeLine{00035\ \ \ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{void}\ service(\textcolor{keywordtype}{int}\ time\ =\ 10);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ createSession(\textcolor{keywordtype}{void}*\ info);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classWebServerBase_1_1Session}{Session}}*\ createSession()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classWebServerBase_1_1Session}{Session}}();\ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ lws\_context*\ context\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00046\ \ \ std::vector<Session*>\ sessions;}
+\DoxyCodeLine{00047\ \ \ std::map<int,\ Session*>\ sessionMap;}
+\DoxyCodeLine{00048\ \ \ std::string\ webDir;}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00052\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classWebServer}{WebServer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classWebServerBase}{WebServerBase}}\ \{}
+\DoxyCodeLine{00053\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054\ \ \ \mbox{\hyperlink{classWebServer}{WebServer}}(\textcolor{keywordtype}{int}\ port\ =\ 8081,\ \textcolor{keyword}{const}\ std::string\&\ webDir\ =\ \textcolor{stringliteral}{"{}."{}})}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classWebServerBase}{WebServerBase}}(port,\ webDir)\ \{\}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00058\ \ \ \mbox{\hyperlink{classWebServerBase_1_1Session}{Session}}*\ createSession()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ T();\ \}}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ STATE>}
+\DoxyCodeLine{00062\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classWebServerWithState}{WebServerWithState}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classWebServerBase}{WebServerBase}}\ \{}
+\DoxyCodeLine{00063\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00064\ \ \ \mbox{\hyperlink{classWebServerWithState}{WebServerWithState}}(STATE\ state,\ \textcolor{keywordtype}{int}\ port\ =\ 8081,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ webDir\ =\ \textcolor{stringliteral}{"{}."{}})}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classWebServerBase}{WebServerBase}}(port,\ webDir),\ state(state)\ \{\}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00069\ \ \ \mbox{\hyperlink{classWebServerBase_1_1Session}{Session}}*\ createSession()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ T(state);\ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00072\ \ \ STATE\ state;}
+\DoxyCodeLine{00073\ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{comment}{//\ JSON\ support}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#include\ "{}picojson.h"{}}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJSONSession}{JSONSession}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classWebServerBase_1_1Session}{WebServerBase::Session}}\ \{}
+\DoxyCodeLine{00079\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00080\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ receiveJSON(picojson::value\&\ val)\ \{\}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ sendJSON(picojson::value\&\ val)\ \{\ sendMessage(val.serialize());\ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \textcolor{keywordtype}{void}\ receiveMessage(\textcolor{keyword}{const}\ std::string\&\ msg)\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ buf\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00086\ \ \ \ \ picojson::value\ val;}
+\DoxyCodeLine{00087\ \ \ \ \ std::string\ err\ =\ picojson::parse(val,\ msg);}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordflow}{if}\ (err.empty()\ \&\&\ val.is<picojson::object>())\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ buf\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ receiveJSON(val);}
+\DoxyCodeLine{00091\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ buf\ +=\ msg;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ err\ =\ picojson::parse(val,\ buf);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (err.empty()\ \&\&\ val.is<picojson::object>())\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ buf\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ receiveJSON(val);}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \}}
+\DoxyCodeLine{00100\ \};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#include\ "{}util/json.h"{}}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classJsonSession}{JsonSession}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classJSONSession}{JSONSession}}\ \{}
+\DoxyCodeLine{00105\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00110\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJsonSession_a47b29526ba6c6138bfcef411f8d11b01}{receiveJSON}}(picojson::value\&\ val)\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ JsonObject\ data\ =\ \mbox{\hyperlink{classJsonValue}{JsonValue}}(val);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ std::string\ cmd\ =\ data[\textcolor{stringliteral}{"{}command"{}}];}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ JsonObject\ returnValue;}
+\DoxyCodeLine{00116\ \ \ \ \ returnValue[\textcolor{stringliteral}{"{}id"{}}]\ =\ data[\textcolor{stringliteral}{"{}id"{}}];}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{classJsonSession_ad14ac95cfca415460db03218beb9f717}{receiveCommand}}(cmd,\ data,\ returnValue);}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{classJsonValue}{JsonValue}}\ retVal(returnValue);}
+\DoxyCodeLine{00120\ \ \ \ \ sendJSON(retVal.\mbox{\hyperlink{classJsonValue_a571b1a9da9eb9602f3cbbead698a879d}{getValue}}());}
+\DoxyCodeLine{00121\ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00130\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classJsonSession_ad14ac95cfca415460db03218beb9f717}{receiveCommand}}(\textcolor{keyword}{const}\ std::string\&\ cmd,\ \textcolor{keyword}{const}\ JsonObject\&\ data,}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JsonObject\&\ returnValue)\ =\ 0;}
+\DoxyCodeLine{00132\ \};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ WEBSERVER\_H\_}}
+
+\end{DoxyCode}
