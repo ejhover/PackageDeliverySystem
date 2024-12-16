@@ -5,7 +5,8 @@
 #include "util/json.h"
 
 /**
- *@brief Composite Factory Interface
+ * @class IEntityFactory
+ * @brief Composite Factory Interface
  **/
 class IEntityFactory {
  public:

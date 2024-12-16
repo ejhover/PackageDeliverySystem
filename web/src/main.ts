@@ -19,7 +19,9 @@ const simSpeedSlider = $("#sim-speed");
 const stopSimulationButton = $("#stop-simulation")[0];
 const addHumanButton = $("#add-human")[0];
 const addDroneButton = $("#add-drone")[0];
+const addCoolDroneButton = $("#add-CoolDrone")[0];
 const deliveryPopup = $("#delivery-popup");
+const makeCSV = $("#make-CSV")[0];
 
 const sceneFile = "scenes/umn.json";
 const clock = new THREE.Clock();
@@ -36,6 +38,10 @@ stopSimulationButton.onclick = () => {
   sendCommand("stopSimulation", {});
   disconnect();
 };
+
+makeCSV.onclick = () => {
+  sendCommand("CreateCSV", {});
+}
 
 let humanID = 1;
 addHumanButton.onclick = () => {
@@ -57,7 +63,7 @@ addHumanButton.onclick = () => {
 };
 
 let droneID = 1;
-let droneColors = ["red", "blue", "green", "orange", "black"];
+let droneColors = ["red", "green", "orange", "black"];
 addDroneButton.onclick = () => {
   var position = [498.292, 270, -228.623];
   position[0] += randFloat(-10, 10);
@@ -65,6 +71,7 @@ addDroneButton.onclick = () => {
   sendCommand("CreateEntity", {
     type: "drone",
     name: "drone-" + droneID,
+    cooled: false,
     mesh: "assets/model/drone.glb",
     position: position,
     scale: [0.1, 0.1, 0.1],
@@ -76,6 +83,29 @@ addDroneButton.onclick = () => {
     duration: 2.0,
     offset: [0, 0.6, 0],
     color: droneColors[randInt(0, droneColors.length - 1)],
+  });
+  droneID += 1;
+};
+
+addCoolDroneButton.onclick = () => {
+  var position = [480.292, 270, -203.623];
+  position[0] += randFloat(-10, 10);
+  position[2] += randFloat(-10, 10);
+  sendCommand("CreateEntity", {
+    type: "coolDrone",
+    name: "cooldrone-" + droneID,
+    cooled: true,
+    mesh: "assets/model/drone.glb",
+    position: position,
+    scale: [0.1, 0.1, 0.1],
+    rotation: [0, 0, 0, 0],
+    direction: [1, 0, 0],
+    speed: 30.0,
+    radius: 1.0,
+    start: 2.0,
+    duration: 2.0,
+    offset: [0, 0.6, 0],
+    color: "blue",
   });
   droneID += 1;
 };

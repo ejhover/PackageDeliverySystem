@@ -4,7 +4,8 @@
 #include "IEntityFactory.h"
 
 /**
- *@brief Factory method for composite class. Inherits from IEntityFactory.
+ * @class CompositeFactory
+ * @brief Factory method for composite class. Inherits from IEntityFactory.
  **/
 class CompositeFactory : public IEntityFactory {
  public:

@@ -24,6 +24,25 @@ IEntity* PackageFactory::createEntity(const JsonObject& entity) {
       }
     }
     return p;
+  } else if (type.compare("cooledPackage") == 0) {
+    std::cout << "Package Created" << std::endl;
+    Package* p = new Package(entity);
+    auto range = rand() % 6;  // more colors!!!
+    for (int i = 0; i < range; i++) {
+      switch (rand() % 3) {
+        case 0:
+          p = new RedDecorator(p);
+          break;
+        case 1:
+          p = new GreenDecorator(p);
+          break;
+        case 2:
+          p = new BlueDecorator(p);
+          break;
+      }
+    }
+    p->cooled = true;
+    return p;
   }
   return nullptr;
 }

@@ -12,11 +12,19 @@ Copyright (c) 2019 Dan Orban
 #include "libwebsockets.h"
 #include "libwebsockets/lws-service.h"
 
+/**
+ * @class WebServerBase
+ * @brief A collection of WebServer and JSON methods for the Simulation.
+ **/
 class WebServerBase {
  public:
   WebServerBase(int port = 8081, const std::string& webDir = ".");
   virtual ~WebServerBase();
 
+  /**
+   * @class Session
+   * @brief Base class to represent a session in Json which can send and receive messages and update.
+   **/
   class Session {
     friend class WebServerBase;
 
@@ -48,6 +56,11 @@ class WebServerBase {
   std::string webDir;
 };
 
+/**
+ * @class WebServer
+ * @brief Web server without a STATE which allows for the creation of web server
+ *sessions of type T.
+ **/
 template <typename T>
 class WebServer : public WebServerBase {
  public:
@@ -58,6 +71,11 @@ class WebServer : public WebServerBase {
   Session* createSession() { return new T(); }
 };
 
+/**
+ * @class WebServerWithState
+ * @brief Web server with a STATE which allows for the creation of web server
+ *sessions of type T and their respective STATE.
+ **/
 template <typename T, typename STATE>
 class WebServerWithState : public WebServerBase {
  public:
@@ -75,6 +93,11 @@ class WebServerWithState : public WebServerBase {
 // JSON support
 #include "picojson.h"
 
+/**
+ * @class JSONSession
+ * @brief Provides JSON functions to handle sessions and messages in the
+ *simulation.
+ **/
 class JSONSession : public WebServerBase::Session {
  public:
   virtual void receiveJSON(picojson::value& val) {}
@@ -101,6 +124,11 @@ class JSONSession : public WebServerBase::Session {
 
 #include "util/json.h"
 
+/**
+ * @class JsonSession
+ * @brief A kind of JSONSession which handle commands in JSON format and process
+ *commands in Json.
+ **/
 class JsonSession : public JSONSession {
  public:
   /**

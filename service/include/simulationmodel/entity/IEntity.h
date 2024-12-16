@@ -87,6 +87,11 @@ class IEntity : public IPublisher {
   virtual double getSpeed() const;
 
   /**
+   * @brief Returns a pointer to the model that the entity is in.
+   */
+  virtual SimulationModel* getModel() const;
+
+  /**
    * @brief Sets the position of the entity.
    * @param pos_ The desired position of the entity.
    */

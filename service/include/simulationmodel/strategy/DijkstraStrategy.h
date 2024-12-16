@@ -1,10 +1,11 @@
 #ifndef DIJKSTRA_STRATEGY_H_
 #define DIJKSTRA_STRATEGY_H_
 
-#include "PathStrategy.h"
 #include "Graph.h"
+#include "PathStrategy.h"
 
 /**
+ * @class DijkstraStrategy
  * @brief this class inhertis from the PathStrategy class and is responsible for
  * generating the dijkstra path that the drone will take.
  */

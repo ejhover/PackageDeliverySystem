@@ -7,7 +7,8 @@
 #include "Package.h"
 
 /**
- *@brief Package Factory to produce Package class.
+ * @class PackageFactory
+ * @brief Package Factory to produce Package class.
  **/
 class PackageFactory : public IEntityFactory {
  public:

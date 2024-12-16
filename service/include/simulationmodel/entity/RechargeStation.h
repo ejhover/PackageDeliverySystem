@@ -7,6 +7,10 @@
 #include "math/vector3.h"
 #include "util/json.h"
 
+/**
+ * @class RechargeStation
+ * @brief Recharge Station entity where entities with batteries can recharge.
+ */
 class RechargeStation : public IEntity {
  public:
   /**

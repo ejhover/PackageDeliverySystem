@@ -20,3 +20,7 @@ void ICelebrationDecorator::move(IEntity* entity, double dt) {
 }
 
 bool ICelebrationDecorator::isCompleted() { return time <= 0; }
+
+double ICelebrationDecorator::distance() { return 0.0; }
+
+Vector3 ICelebrationDecorator::getDestination() { return 0.0; }

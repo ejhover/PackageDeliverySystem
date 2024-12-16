@@ -1,10 +1,11 @@
 #ifndef ASTAR_STRATEGY_H_
 #define ASTAR_STRATEGY_H_
 
-#include "PathStrategy.h"
 #include "Graph.h"
+#include "PathStrategy.h"
 
 /**
+ * @class AstarStrategy
  * @brief this class inhertis from the PathStrategy class and is responsible for
  * generating the astar path that the drone will take.
  */

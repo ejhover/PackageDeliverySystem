@@ -7,17 +7,20 @@
 
 #include "CompositeFactory.h"
 #include "Drone.h"
+#include "Graph.h"
 #include "IController.h"
 #include "IEntity.h"
 #include "IObserver.h"
 #include "Robot.h"
-#include "Graph.h"
+#include "math/vector3.h"
+#include "weather.h"
 
 //--------------------  Model ----------------------------
 
 /// Simulation Model handling the transit simulation.  The model can communicate
 /// with the controller.
 /**
+ * @class SimulationModel
  * @brief Class SimulationModel handling the transit simulation. it can
  * communicate with the controller
  **/
@@ -54,11 +57,25 @@ class SimulationModel : public IObserver {
   void removeEntity(int id);
 
   /**
+   * @brief Removes cool entity with given ID from the simulation
+   *
+   * @param id of the cool entity to be removed
+   */
+  void removeCoolEntity(int id);
+
+  /**
    * @brief Schedule a trip for an object in the scene
    * @param detail Type JsonObject contain the entity's reference to schedule
    *the detail of the trip being scheduled
    **/
   void scheduleTrip(const JsonObject& details);
+
+  /**
+   * @brief Schedule a trip for an cool object in the scene
+   * @param detail Type JsonObject contain the entity's reference to schedule
+   *the detail of the trip being scheduled
+   **/
+  void scheduleCoolTrip(const JsonObject& details);
 
   /**
    * @brief Update the simulation
@@ -82,12 +99,18 @@ class SimulationModel : public IObserver {
   void notify(const std::string& message) const;
 
   std::deque<Package*> scheduledDeliveries;
+  std::deque<Package*> scheduledCoolDeliveries;
+  std::vector<Vector3> rechargeStations;
+  std::vector<Vector3> coolingStations;
 
  protected:
   IController& controller;
   std::map<int, IEntity*> entities;
+  std::map<int, IEntity*> cooledEntities;
   std::set<int> removed;
+  std::set<int> cooledRemoved;
   void removeFromSim(int id);
+  void removeCoolFromSim(int id);
   const routing::Graph* graph = nullptr;
   CompositeFactory entityFactory;
 };

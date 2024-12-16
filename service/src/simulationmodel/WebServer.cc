@@ -20,11 +20,11 @@ WebServerBase::Session::Session() {
   id = currentId;
   currentId++;
 }
-
 WebServerBase::Session::~Session() {
   WebServerSessionState *sessionState =
       static_cast<WebServerSessionState *>(state);
-  std::vector<WebServerBase::Session *> &sessions = *sessionState->sessions;
+  std::vector<WebServerBase::Session *>
+  &sessions = *sessionState->sessions;
   std::vector<Session *>::iterator it =
       std::find(sessions.begin(), sessions.end(), this);
   if (it != sessions.end()) {

@@ -9,6 +9,7 @@
 /// Abstract controller class used in the Transit Service.  Uses the Model View
 /// Controller Pattern
 /**
+ * @class IController
  * @brief class for IController used for transit service. Uses the Model View
  **/
 class IController {
@@ -35,6 +36,12 @@ class IController {
    * @param id Type int contain the ID of the entity object
    **/
   virtual void removeEntity(const IEntity& entity) = 0;
+
+  /**
+   * @brief To remove the cool entity from the program
+   * @param entity The entity to remove from the simulation
+   **/
+  virtual void removeCoolEntity(const IEntity& entity) = 0;
 
   /**
    * @brief To allow message to be passed back to the view

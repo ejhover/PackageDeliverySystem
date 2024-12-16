@@ -39,6 +39,8 @@ std::string IEntity::getName() const { return name; }
 
 double IEntity::getSpeed() const { return speed; }
 
+SimulationModel* IEntity::getModel() const { return model; }
+
 void IEntity::setPosition(Vector3 pos_) { position = pos_; }
 
 void IEntity::setDirection(Vector3 dir_) { direction = dir_; }

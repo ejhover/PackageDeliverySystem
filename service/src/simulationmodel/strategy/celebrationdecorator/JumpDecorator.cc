@@ -16,3 +16,19 @@ void JumpDecorator::celebrate(IEntity* entity, double dt) {
     if (h <= 0) up = true;
   }
 }
+
+double JumpDecorator::distance() {
+  if (strategy) {
+    return strategy->distance();
+  } else {
+    return 0.0;
+  }
+}
+
+Vector3 JumpDecorator::getDestination() {
+  if (strategy) {
+    return strategy->getDestination();
+  } else {
+    return Vector3(0);
+  }
+}

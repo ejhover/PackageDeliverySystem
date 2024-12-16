@@ -4,8 +4,8 @@
 #include "IEntity.h"
 
 /**
+ * @class IStrategy
  * @brief Strategy interface
- *
  */
 class IStrategy {
  public:
@@ -24,6 +24,16 @@ class IStrategy {
    * @return True if complete, false if not complete
    */
   virtual bool isCompleted() = 0;
+
+  /**
+   * @brief Calculates total distance of the current trip
+   */
+  virtual double distance() = 0;
+
+  /**
+   * @brief Returns the destination of the path
+   */
+  virtual Vector3 getDestination() = 0;
 };
 
 #endif

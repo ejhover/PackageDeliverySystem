@@ -4,6 +4,7 @@
 #include "OBJParser.h"
 #include "SimulationModel.h"
 #include "WebServer.h"
+#include "DataCollection.h"
 
 //--------------------  Controller ----------------------------
 bool stopped = false;
@@ -25,6 +26,11 @@ class TransitService : public JsonSession, public IController {
       model.setGraph(routing::OBJGraphParser(path));
     } else if (cmd == "ScheduleTrip") {
       model.scheduleTrip(data);
+    } else if (cmd == "ScheduleCoolTrip") {
+      model.scheduleCoolTrip(data);
+    } else if (cmd == "CreateCSV") {
+      DataCollection* d = DataCollection::getInstance();
+      d->createCSV();
     } else if (cmd == "ping") {
       if (data.contains("message"))
         std::cout << std::string(data["message"]) << std::endl;
@@ -91,6 +97,13 @@ class TransitService : public JsonSession, public IController {
     details["id"] = entity.getId();
     updateEntites.erase(entity.getId());
     sendEventToView("RemoveEntity", details);
+  }
+
+  void removeCoolEntity(const IEntity& entity) {
+    JsonObject details;
+    details["id"] = entity.getId();
+    updateEntites.erase(entity.getId());
+    sendEventToView("RemoveCoolEntity", details);
   }
 
   /// Allows messages to be passed back to the view

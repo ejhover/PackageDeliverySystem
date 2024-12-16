@@ -3,6 +3,10 @@
 
 #include "PackageColorDecorator.h"
 
+/**
+ * @class BlueDecorator
+ * @brief Allows packages to be colored blue, but is limited to cooled packages.
+ **/
 class BlueDecorator : public PackageColorDecorator {
  public:
   BlueDecorator(Package*);

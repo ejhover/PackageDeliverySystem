@@ -4,6 +4,7 @@
 #include "IStrategy.h"
 
 /**
+ * @class ICelebrationDecorator
  * @brief this class inhertis from the IStrategy class and is represents
  * a celebration decorator where the entity will celebrate according to it.
  */
@@ -42,6 +43,16 @@ class ICelebrationDecorator : public IStrategy {
   virtual bool isCompleted();
 
   virtual void celebrate(IEntity* entity, double dt) = 0;
+
+  /**
+   * @brief Calculates total distance of the current trip
+   */
+  virtual double distance();
+
+  /**
+   * @brief Returns the destination of the path
+   */
+  virtual Vector3 getDestination();
 };
 
 #endif  // CELEBRATION_DECORATOR_H_

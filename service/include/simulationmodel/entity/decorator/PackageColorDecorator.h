@@ -3,6 +3,10 @@
 
 #include "PackageDecorator.h"
 
+/**
+ * @class PackageColorDecorator
+ * @brief The parent of all package color decorator classes.
+ **/
 class PackageColorDecorator : public PackageDecorator {
  private:
   double hue = 0;

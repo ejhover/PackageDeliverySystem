@@ -4,6 +4,7 @@
 #include "ICelebrationDecorator.h"
 
 /**
+ * @class SpinDecorator
  * @brief this class inhertis from the IStrategy class and is represents
  * a celebration decorator where the entity will celebrate according to it.
  */
@@ -25,6 +26,16 @@ class SpinDecorator : public ICelebrationDecorator {
    * @param dt Delta Time
    */
   void celebrate(IEntity* entity, double dt);
+
+  /**
+   * @brief Calculates total distance of the current trip
+   */
+  virtual double distance();
+
+  /**
+   * @brief Returns the destination of the path
+   */
+  virtual Vector3 getDestination();
 
  private:
   double spinSpeed = 1;

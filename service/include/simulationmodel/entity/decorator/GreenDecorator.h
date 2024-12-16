@@ -3,6 +3,10 @@
 
 #include "PackageColorDecorator.h"
 
+/**
+ * @class GreenDecorator
+ * @brief Allows packages to be colored green.
+ **/
 class GreenDecorator : public PackageColorDecorator {
  public:
   GreenDecorator(Package*);

@@ -5,6 +5,10 @@
 #include "Package.h"
 #include "Robot.h"
 
+/**
+ * @class PackageDecorator
+ * @brief The parent of all package decorator classes.
+ **/
 class PackageDecorator : public IEntityDecorator<Package> {
  public:
   PackageDecorator(Package* p) : IEntityDecorator(p) {}

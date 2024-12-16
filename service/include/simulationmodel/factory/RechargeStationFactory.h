@@ -3,11 +3,12 @@
 
 #include <vector>
 
-#include "RechargeStation.h"
 #include "IEntityFactory.h"
+#include "RechargeStation.h"
 
 /**
- *@brief Recharge Station Factory to produce Recharge Stations.
+ * @class RechargeStationFactory
+ * @brief Recharge Station Factory to produce Recharge Stations.
  **/
 class RechargeStationFactory : public IEntityFactory {
  public:

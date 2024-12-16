@@ -36,10 +36,30 @@ class Drone : public IEntity {
   void getNextDelivery();
 
   /**
+   * @brief gets the next delivery for cool drones
+   */
+  void getNextCoolDelivery();
+  /**
    * @brief Updates the drone's position
    * @param dt Delta time
    */
   void update(double dt);
+
+  /**
+   * @brief Updates cool drones' position
+   * @param dt Delta time
+   */
+  void coolUpdate(double dt);
+
+  /**
+   * @brief Returns the IStrategy pointer to travel to the package
+   */
+  IStrategy* getToPackage();
+
+  /**
+   * @brief Returns the IStrategy pointer to bring the package to the final destination
+   */
+  IStrategy* getToFinalDestination();
 
   /**
    * @brief Removing the copy constructor operator
@@ -52,6 +72,11 @@ class Drone : public IEntity {
    * so that drones cannot be copied.
    */
   Drone& operator=(const Drone& drone) = delete;
+
+  /**
+   * @brief returns false if the drone is not a cooling drone
+   */
+  virtual bool canPickUpCooledPackages() { return false; }
 
  private:
   bool available = false;

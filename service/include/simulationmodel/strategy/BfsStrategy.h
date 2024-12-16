@@ -1,10 +1,12 @@
 #ifndef BFS_STRATEGY_H_
 #define BFS_STRATEGY_H_
 
-#include "PathStrategy.h"
 #include "Graph.h"
+#include "PathStrategy.h"
+
 
 /**
+ * @class BfsStrategy
  * @brief this class inhertis from the PathStrategy class and is responsible for
  * generating the depth first search path that the drone will take.
  */

@@ -9,6 +9,11 @@
 
 class Robot;
 
+/**
+ * @class Package
+ * @brief Represents a Package in the Simulation. The package is picked up by
+ * drones to be delivered to robots.
+ **/
 class Package : public IEntity {
  public:
   /**
@@ -69,6 +74,8 @@ class Package : public IEntity {
    * @brief Gives the robot/owner this package
    */
   virtual void handOff();
+
+  bool cooled = false;
 
  protected:
   bool requiresDelivery_ = true;

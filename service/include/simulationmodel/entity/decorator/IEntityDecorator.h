@@ -6,6 +6,11 @@
 #include "IEntity.h"
 
 template <std::derived_from<IEntity> T = IEntity>
+
+/**
+ * @class IEntityDecorator
+ * @brief The parent of all the decorator classes.
+ **/
 class IEntityDecorator : public T {
  public:
   IEntityDecorator(T* e) : T(e->getDetails()), sub(e) {}
@@ -22,6 +27,7 @@ class IEntityDecorator : public T {
   virtual std::string getColor() const { return sub->getColor(); }
   virtual std::string getName() const { return sub->getName(); }
   virtual double getSpeed() const { return sub->getSpeed(); }
+  virtual SimulationModel* getModel() const { return sub->getModel(); }
   virtual void setPosition(Vector3 pos_) { return sub->setPosition(pos_); }
   virtual void setDirection(Vector3 dir_) { return sub->setDirection(dir_); }
   virtual void setColor(std::string col_) { return sub->setColor(col_); }

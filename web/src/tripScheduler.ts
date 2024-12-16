@@ -13,6 +13,7 @@ const scheduleStrategy = $("#search-strategy")[0] as HTMLSelectElement;
 const scheduleSubmit = $("#schedule-submit")[0];
 const scheduleError = $("#schedule-error")[0];
 const scheduleCancelButton = $("#schedule-cancel")[0];
+const cooledPackageCheckbox = $("#cool-package")[0];
 
 let raycaster = new THREE.Raycaster();
 let beamGeometry = new THREE.CylinderGeometry(0.2, 0.2, 3000, 16, 1);
@@ -92,49 +93,102 @@ function initScheduler() {
       scheduleError.innerHTML +=
         '<p style="color: red">[!] Error, missing pickup and drop off location ...</p>';
     if (name != "" && beamState == 3) {
-      sendCommand("CreateEntity", {
-        type: "package",
-        name: name + "_package",
-        mesh: "assets/model/package1.glb",
-        position: [
-          beamSelector1.position.x * 14.2,
-          254.665,
-          beamSelector1.position.z * 14.2,
-        ],
-        scale: [0.75, 0.75, 0.75],
-        direction: [1, 0, 0],
-        speed: 30.0,
-        radius: 1.0,
-        rotation: [0, 0, 0, 0],
-      });
-      sendCommand("CreateEntity", {
-        type: "robot",
-        name: name,
-        mesh: "assets/model/robot.glb",
-        position: [
-          beamSelector2.position.x * 14.2,
-          254.665,
-          beamSelector2.position.z * 14.2,
-        ],
-        scale: [0.25, 0.25, 0.25],
-        direction: [1, 0, 0],
-        speed: 30.0,
-        radius: 1.0,
-        rotation: [0, 0, 0, 0],
-      });
-      sendCommand("ScheduleTrip", {
-        name: name,
-        start: [
-          beamSelector1.position.x * 14.2,
-          beamSelector1.position.z * 14.2,
-        ],
-        end: [
-          beamSelector2.position.x * 14.2,
-          254.665,
-          beamSelector2.position.z * 14.2,
-        ],
-        search: searchStrat,
-      });
+      const packageType = (cooledPackageCheckbox as HTMLInputElement).checked
+      ? "cooledPackage"
+      : "package";
+    
+      if (packageType === "package"){
+        sendCommand("CreateEntity", {
+          type: packageType,
+          name: name + "_package",
+          mesh: "assets/model/package1.glb",
+          position: [
+            beamSelector1.position.x * 14.2,
+            254.665,
+            beamSelector1.position.z * 14.2,
+          ],
+          scale: [0.75, 0.75, 0.75],
+          direction: [1, 0, 0],
+          speed: 30.0,
+          radius: 1.0,
+          rotation: [0, 0, 0, 0],
+        });
+        sendCommand("CreateEntity", {
+          type: "robot",
+          name: name,
+          mesh: "assets/model/robot.glb",
+          position: [
+            beamSelector2.position.x * 14.2,
+            254.665,
+            beamSelector2.position.z * 14.2,
+          ],
+          scale: [0.25, 0.25, 0.25],
+          direction: [1, 0, 0],
+          speed: 30.0,
+          radius: 1.0,
+          rotation: [0, 0, 0, 0],
+        });
+        sendCommand("ScheduleTrip", {
+          name: name,
+          start: [
+            beamSelector1.position.x * 14.2,
+            beamSelector1.position.z * 14.2,
+          ],
+          end: [
+            beamSelector2.position.x * 14.2,
+            254.665,
+            beamSelector2.position.z * 14.2,
+          ],
+          search: searchStrat,
+        });
+      }
+      else{
+        sendCommand("CreateEntity", {
+          type: packageType,
+          name: name + "_package",
+          cooled: true,
+          mesh: "assets/model/package1.glb",
+          position: [
+            beamSelector1.position.x * 14.2,
+            254.665,
+            beamSelector1.position.z * 14.2,
+          ],
+          scale: [0.75, 0.75, 0.75],
+          direction: [1, 0, 0],
+          speed: 30.0,
+          radius: 1.0,
+          rotation: [0, 0, 0, 0],
+        });
+        sendCommand("CreateEntity", {
+          type: "robot",
+          name: name,
+          cooled: true,
+          mesh: "assets/model/robot.glb",
+          position: [
+            beamSelector2.position.x * 14.2,
+            254.665,
+            beamSelector2.position.z * 14.2,
+          ],
+          scale: [0.25, 0.25, 0.25],
+          direction: [1, 0, 0],
+          speed: 30.0,
+          radius: 1.0,
+          rotation: [0, 0, 0, 0],
+        });
+        sendCommand("ScheduleCoolTrip", {
+          name: name,
+          start: [
+            beamSelector1.position.x * 14.2,
+            beamSelector1.position.z * 14.2,
+          ],
+          end: [
+            beamSelector2.position.x * 14.2,
+            254.665,
+            beamSelector2.position.z * 14.2,
+          ],
+          search: searchStrat,
+        });
+      }
       beamState = 0;
       beamSelector1.visible = false;
       beamSelector2.visible = false;

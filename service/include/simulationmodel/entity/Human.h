@@ -4,6 +4,11 @@
 #include "IEntity.h"
 #include "IStrategy.h"
 
+/**
+ * @class Human
+ * @brief Represents a Human in the Simulation. The human walks around the map
+ * randomly, like the Helicopter, but cannot fly.
+ **/
 class Human : public IEntity {
  public:
   /**

@@ -7,7 +7,8 @@
 #include "Robot.h"
 
 /**
- *@brief Drone Factory to produce Drones class.
+ * @class RobotFactory
+ *@brief Robot Factory to produce Robot class.
  **/
 class RobotFactory : public IEntityFactory {
  public:

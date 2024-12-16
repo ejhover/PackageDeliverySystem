@@ -4,6 +4,11 @@
 #include "IEntity.h"
 #include "IStrategy.h"
 
+/**
+ * @class Helicopter
+ * @brief Represents a Helicopter in the Simulation. The Helicopter moves around
+ * the map randomly.
+ **/
 class Helicopter : public IEntity {
  public:
   /**

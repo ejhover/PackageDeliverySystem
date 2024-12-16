@@ -4,6 +4,7 @@
 #include "IStrategy.h"
 
 /**
+ * @class PathStrategy
  * @brief this class inhertis from the IStrategy class and is represents
  * a movement strategy where the entity simply moves along the given path
  */
@@ -35,6 +36,16 @@ class PathStrategy : public IStrategy {
    * @return True if complete, false if not complete
    */
   virtual bool isCompleted();
+
+  /**
+   * @brief Calculate the length of the distance to the destination
+   */
+  virtual double distance();
+
+  /**
+   * @brief Returns the destination vector
+   */
+  virtual Vector3 getDestination();
 };
 
 #endif  // PATH_STRATEGY_H_
